@@ -1,11 +1,13 @@
 import { useState } from "react"
-
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const CartWidget = () => {
     return(
     <div>
-        <img width="64" height="64" src="https://img.icons8.com/cotton/64/shopping-cart--v1.png" alt="shopping-cart--v1"/>
-        <p>10</p>
+        <AiOutlineShoppingCart/>
+        <div className={['count-products']}>
+						<span >{7}</span>
+					</div>
     </div>
     )
 }

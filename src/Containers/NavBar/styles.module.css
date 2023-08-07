@@ -1,0 +1,15 @@
+.container-fluid{   
+    display: flex;
+    background-color: darkgrey;
+
+}
+.navbar-nav{
+    display: flex;
+    margin: 0 10px
+}
+
+li{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0 10px
+}
