@@ -1,0 +1,7 @@
+.producto{
+    width: auto;
+    margin: 10px
+}
+.lista{
+    display: flex;
+}

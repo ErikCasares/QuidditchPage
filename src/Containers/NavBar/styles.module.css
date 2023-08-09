@@ -1,13 +1,27 @@
-.container-fluid{   
-    display: flex;
-    background-color: darkgrey;
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-.navbar-nav{
+ul {
     display: flex;
-    margin: 0 10px
+    flex-direction: row;
 }
-
+nav{
+    display: flex;
+    flex-direction: row;
+}
+a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+a:hover {
+    background-color: #ddd;
+    color: black;
+}
 li{
     text-decoration: none;
     list-style-type: none;
