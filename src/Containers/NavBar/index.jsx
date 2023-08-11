@@ -1,13 +1,22 @@
 import CartWidget from '../../components/CartWidget/CarWidget';
 import styles from './styles.module.css'
 
+
 const Navbar = () => {
-return (
-<nav>
-    <h2>Kabum componentes</h2>
-<ul>
+
+
+    const estilo = {
+        backgroundColor: 'rgb(2, 169, 211)',
+        display: 'flex',
+        
+        padding: '10px',
+        borderRadius: '5px',
+    };
+
+    const nav = <>
+    <ul className="nav">
     <li>
-    <a href="#inicio">Inicio</a>
+    <a className='link' href="#inicio">Inicio</a>
     </li>
     <li>
     <a href="#">productos</a>
@@ -19,8 +28,12 @@ return (
     <a href="#">nosotros</a>
     </li>
     <CartWidget />
-</ul>
-</nav>
+</ul></>
+return (
+<>
+    <h1>Artículos de Calidad para Quidditch</h1>
+    {nav}
+</>
 
 
 );

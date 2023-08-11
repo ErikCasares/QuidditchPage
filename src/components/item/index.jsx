@@ -1,13 +1,23 @@
 import styles from './styles.module.css'
 
 
-const Item = ({nombre, deleteItem}) => {
+
+const Item = (props) => {
+const {productos} = props; 
+    
+    
     return(
-        <div className={styles['contenedor']}>
-            <p>{nombre}</p>
-            <button onClick={() => deleteItem(nombre)}>Borrar</button>
-        </div>
-    )
+        <>
+    <h3>Lista de Escobas</h3>
+        <ul className="lista-escobas">
+        {productos.map(producto => (
+            <li key={producto.id}>
+            {producto.nombre} - ${producto.precio}
+            </li>
+        ))}
+        </ul>
+        </>
+    );
 }
 
 

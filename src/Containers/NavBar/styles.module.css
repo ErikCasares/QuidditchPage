@@ -1,19 +1,14 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-ul {
+
+
+.nav{
     display: flex;
     flex-direction: row;
-}
-nav{
-    display: flex;
-    flex-direction: row;
+    
 }
 a {
-    float: left;
+
     display: block;
-    color: white;
+    color: rgb(211, 2, 2);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

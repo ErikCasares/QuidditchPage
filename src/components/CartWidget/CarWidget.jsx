@@ -4,10 +4,13 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 const CartWidget = () => {
     return(
     <div>
-        <AiOutlineShoppingCart/>
+        <a href="http://"><AiOutlineShoppingCart/>
         <div className={['count-products']}>
 						<span >{7}</span>
 					</div>
+        </a>
+        
+
     </div>
     )
 }
