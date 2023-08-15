@@ -1,23 +1,13 @@
 import { useState } from "react"
 import styles from './styles.module.css'
-import Item from "../../components/item"
 const ItemListContainer = (props) => {
-        const {productos} = props; 
-
-
-
-
-
+const {productos} = props;
 
 return(
-        <div>
-                <h2>Listas de Productos</h2>
-                <Item productos ={productos}/>
-        </div>  
-        )
+<div>
+    <h2>Listas de Productos</h2>
+    <p>{productos}</p>
+</div>
+)
 }
-
-
-
-
 export default ItemListContainer
