@@ -1,18 +1,11 @@
-import { useState } from 'react'
 import './App.css'
-import ItemListContainer from './Containers/ItemListContainer'
-import Navbar from './Containers/NavBar'
-
+import Router from './components/router/router';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
-const productos = "Listas aun no disponibles";
+
 
 return (
-<div className='App'>
-	<header className='App-header'>
-		<Navbar />
-		<ItemListContainer productos={productos} />
-	</header>
-</div>
+<Router/> 
 );
 }
 

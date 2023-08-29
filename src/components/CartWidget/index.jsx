@@ -1,12 +1,10 @@
-import { useState } from "react"
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import styles from './styles.module.css'
 
-const CartWidget = () => {
+const CartWidget = ({cart}) => {
     return(
     <div>
         <a href=""><AiOutlineShoppingCart/>
-            <div className="cart-bubble">7</div>
+            <div className="cart-bubble">{cart.length}</div>
         </a>
     </div>
     )
