@@ -28,5 +28,4 @@ const ItemDetail = ({ productDetail, addToCart}) =>{
     
 }
 
-
 export default ItemDetail

@@ -52,6 +52,4 @@ return(
     )
 }
 
-
-
 export default ItemListContainer

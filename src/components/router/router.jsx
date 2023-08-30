@@ -9,8 +9,6 @@ import {
 import NavBar from '../NavBar'
 import { useState } from 'react'
 
-
-
 export default function Router() {
 const productDetail = []
     const [cart, setCart] = useState([])

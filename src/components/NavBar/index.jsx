@@ -6,7 +6,6 @@ import Navbar from 'react-bootstrap/Navbar'
 import Button from 'react-bootstrap/esm/Button'
 /* eslint-disable react/prop-types */
 
-
 const NavBar = ({cart,deleteCart}) => {
 
 	return (
