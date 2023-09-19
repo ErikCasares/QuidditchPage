@@ -1,9 +1,21 @@
 import ButtonGroup from 'react-bootstrap/ButtonGroup'
 import Button from 'react-bootstrap/Button'
-import { useState } from 'react'
+import { CartContext } from "../../CartContex/CartContex"
+import { useContext, useState } from "react"
 
-const ItemCount = ({ productDetail, addToCart})=>{
+const ItemCount = ({ productDetail})=>{
+    const context = useContext(CartContext)
     const [contador, setContador] = useState(1)
+
+    const [quantity, setQuantity] = useState(1)
+    
+    const handleAddToCart = () => {
+        context.addToCart({ ...productDetail, quantity })
+        setQuantity(1);
+    }
+    
+
+
 
     const sumar = () => {
         setContador(contador + 1)
@@ -16,16 +28,18 @@ const ItemCount = ({ productDetail, addToCart})=>{
     
     const add = () => {
         setContador(1)
-        addToCart(productDetail)
+        context.addToCart(productDetail)
     }
 
 return (
 <>
-<p>cantidad a agregar= {contador}</p>
 <ButtonGroup aria-label="Basic example">
-                    <Button className='btn' onClick={sumar}>+</Button>
-                    <Button className='btn' onClick={restar}>-</Button>
-                    <Button className='btn' onClick={add}>agregar al carrito</Button>
+<input
+        type="number"
+        value={quantity}
+        onChange={(e) => setQuantity(parseInt(e.target.value))}
+      />
+                    <Button className='btn'variant="dark" onClick={handleAddToCart}>agregar al carrito</Button>
                     </ButtonGroup>
 </>
 )

@@ -8,25 +8,20 @@ import {
 } from "react-router-dom"
 import NavBar from '../NavBar'
 import { useState } from 'react'
+import { useEffect } from 'react'
+import UserProfile from '../component'
+import CartView from '../CartView'
 
 export default function Router() {
-const productDetail = []
-    const [cart, setCart] = useState([])
-    const addToCart = (productDetail) => {
-        setCart([...cart,productDetail])
-        console.log(cart.length)
-        console.log(cart)
-    }
-    const deleteCart = () => {
-        setCart(["0"])
-    }
+
     return(
         <BrowserRouter>
-            <NavBar cart={cart} delete={deleteCart}/>
+            <NavBar/>
             <Routes>
-                <Route path="/" element={<ItemListContainer addToCart={addToCart}/>} />
-                <Route path="/category/:id" element={<ItemListContainer  addToCart={addToCart}/>} />
-                <Route path="/item/:id" element={<ItemDetailContainer addToCart={addToCart}/>} />
+                <Route path="/" element={<ItemListContainer />} />
+                <Route path="/category/:id" element={<ItemListContainer/>} />
+                <Route path="/item/:id" element={<ItemDetailContainer/>} />
+                <Route path="/:id" element={<UserProfile/>}/>
             </Routes>
         </BrowserRouter>
     )
