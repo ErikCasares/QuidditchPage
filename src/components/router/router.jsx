@@ -9,7 +9,7 @@ import {
 import NavBar from '../NavBar'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import UserProfile from '../component'
+import UserProfile from '../Checkout'
 import CartView from '../CartView'
 
 export default function Router() {
