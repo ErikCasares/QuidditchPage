@@ -18,13 +18,11 @@ export default function Router() {
         <BrowserRouter>
             <NavBar/>
             <Routes>
-                <Route path="/" element={<ItemListContainer />} />
-                <Route path="/category/:id" element={<ItemListContainer/>} />
-                <Route path="/item/:id" element={<ItemDetailContainer/>} />
+                <Route path="/" element={<ItemListContainer />}/>
+                <Route path="/category/:id" element={<ItemListContainer/>}/>
+                <Route path="/item/:id" element={<ItemDetailContainer/>}/>
                 <Route path="/:id" element={<UserProfile/>}/>
             </Routes>
         </BrowserRouter>
     )
 }
-
-
