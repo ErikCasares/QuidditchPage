@@ -16,8 +16,6 @@ function UserProfile() {
         correo: '',
     })
 
-
-
       // Funciones para manejar los cambios en los inputs
     function handleNombreChange(event) {
         setComprador({ ...comprador, nombre: event.target.value })
@@ -56,20 +54,10 @@ function UserProfile() {
         })
         console.log(context.precioSumado)
         const orderCollection = collection(db, 'orders')
-        addDoc(orderCollection, order).then(({id}) =>mostrarorden(id))
+        addDoc(orderCollection, order).then(({id}) =>console.log(id))
         context.deleteCart()
 
     }}
-    const mostrarorden = (id) =>{
-        const productRef = doc(db, "orders", id)
-        getDoc(productRef).then((snapshot => {
-            if(snapshot.exists()){
-                console.log( { id: snapshot.id, ...snapshot.data() } )
-            }
-        }))
-    }
-    
-    
 
     return (
         <div className="holamundo">

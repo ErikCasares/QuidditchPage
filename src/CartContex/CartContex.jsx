@@ -32,13 +32,11 @@ export const CartComponentContext = ({children}) => {
     cart.forEach(element => {
         const preciosumado = element.price * element.quantity
         const precioCar =preciosumado
-        console.log(precioCar)
     });
     const precioSumado = cart.reduce((total, element) => {
         const precioPorItem = element.price * element.quantity;
         return total + precioPorItem;
     }, 0);
-    console.log(precioSumado)
 
     
 
