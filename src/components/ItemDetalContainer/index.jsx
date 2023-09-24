@@ -11,16 +11,16 @@ const ItemDetailContainer = (props) => {
     const productsRef = collection(db, "products")
     const addToCart= props.addToCart
     useEffect(()=> {
-    const getProductos = async() =>{
-        const data = await getDocs(productsRef)
+        const getProductos = async() =>{
+            const data = await getDocs(productsRef)
             const dataFiltrada = data.docs.map((doc) => ( {...doc.data(), id: doc.id} ))
             const productos = dataFiltrada
-        const filteredItem = productos.find(productos => productos.id == id)
+            const filteredItem = productos.find(productos => productos.id == id)
         if (filteredItem) 
             setProductDetail(filteredItem)
-    }
+        }
             getProductos()
-        }, [id])
+    }, [id])
     
     return (
     <>

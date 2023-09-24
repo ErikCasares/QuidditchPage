@@ -1,7 +1,7 @@
 import { CartContext } from "../../CartContex/CartContex"
 import { useContext, useState } from "react"
 import CartView from "../CartView"
-import { addDoc, collection} from "firebase/firestore"
+import {getDocs, collection, query, where, limit, getDoc, doc, addDoc, updateDoc, writeBatch } from 'firebase/firestore'
 import {db} from "../../firebase/cliente"
 import Swal from 'sweetalert2'
 import { Link } from "react-router-dom"
@@ -56,11 +56,19 @@ function UserProfile() {
         })
         console.log(context.precioSumado)
         const orderCollection = collection(db, 'orders')
-        addDoc(orderCollection, order).then(({id}) =>console.log(id))
+        addDoc(orderCollection, order).then(({id}) =>mostrarorden(id))
         context.deleteCart()
-        
-    }}
 
+    }}
+    const mostrarorden = (id) =>{
+        const productRef = doc(db, "orders", id)
+        getDoc(productRef).then((snapshot => {
+            if(snapshot.exists()){
+                console.log( { id: snapshot.id, ...snapshot.data() } )
+            }
+        }))
+    }
+    
     
 
     return (

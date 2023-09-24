@@ -16,15 +16,12 @@ return(
     <div>
         <button variant="primary" onClick={context.handleShow}>
             <AiOutlineShoppingCart/><Badge bg="secondary">{context.cart.length}</Badge>
-            
         </button>
         {show && (
-      <Modal show={show} onHide={context.handleClose}>
-        <CartView/>
-       
-      </Modal>
-    )}
-
+        <Modal show={show} onHide={context.handleClose}>
+            <CartView/>
+        </Modal>
+        )}
     </div>
     )
 }

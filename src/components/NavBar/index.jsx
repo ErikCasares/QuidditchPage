@@ -23,7 +23,6 @@ const NavBar = () => {
 					<Nav.Link as ={Link} to="category/escobas">Escobas</Nav.Link>
 					<Nav.Link as ={Link} to="category/tunicas">Tunicas</Nav.Link>
 					<Nav.Link as ={Link} to="category/bolas">Bolas de juego</Nav.Link>
-					<Nav.Link as ={Link} to="category/electronics">electronicos</Nav.Link>
 				</Nav>
 				</Navbar.Collapse>
 				<CartWidget/>

@@ -9,7 +9,7 @@ const CartView = () => {
     const context = useContext(CartContext)
     const{id} = useParams()
 
- const remove = (parameter) => {
+const remove = (parameter) => {
     const updateCart = itemCart.map((item) =>{
         console.log(item.id)
         if(item.id === parameter) {
@@ -21,38 +21,31 @@ const CartView = () => {
         }
         return item
     })
- }
+}
 
 
 return(
     <> 
-        
-
-                <Modal.Title>Carrito</Modal.Title>
-
-            
+        <Modal.Title>Carrito</Modal.Title>            
             <Modal.Body>{context.cart.map((carrito, index) => (
-        <div key={index}>
-            <ListGroup>
-                <ListGroup.Item><p>{carrito.title}   -${carrito.price}</p>
-                <p>cantidad:{carrito.quantity}</p>
-                <p className="precio">${carrito.price*carrito.quantity}<button onClick={() => remove(carrito.id)}>quitar</button></p></ListGroup.Item>
-            </ListGroup>
-        </div>
-    ))}
-    </Modal.Body>
+            <div key={index}>
+                <ListGroup>
+                    <ListGroup.Item><p>{carrito.title}   -${carrito.price}</p>
+                    <p>cantidad:{carrito.quantity}</p>
+                    <p className="precio">${carrito.price*carrito.quantity}<button onClick={() => remove(carrito.id)}>quitar</button></p></ListGroup.Item>
+                </ListGroup>
+            </div>
+            ))}
+        </Modal.Body>
             <Modal.Footer>
-            <p>
-        Total: ${context.precioSumado}
-</p>
-        <Link to={`/`}><Button variant="danger" size="sm" onClick={context.handleClose}>
+                <p>Total: ${context.precioSumado}</p>
+            <Link to={`/`}><Button variant="danger" size="sm" onClick={context.handleClose}>
                 seguir comprando
-                </Button></Link>
+            </Button></Link>
                 <Link to={`/buy`}>{id === "buy" ? ("") :(console.log(id), <Button variant="success" onClick={context.handleClose}>
                     Pasar por caja
                 </Button>)}</Link>              
             </Modal.Footer>
     </>
-)
-}
+)}
 export default CartView
